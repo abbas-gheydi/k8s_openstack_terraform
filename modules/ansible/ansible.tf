@@ -1,15 +1,6 @@
 
 
-data "template_file" "user_data" {
 
-  template = file("${path.module}/installation.sh")
-  vars = {
-    private_key = var.private_key
-    http_proxy  = "${var.http_proxy}"
-    masterips   = var.masterips
-    workerips   = var.workerips
-  }
-}
 resource "openstack_compute_instance_v2" "ansible" {
   name      = "ansible"
   flavor_id = var.flaver
@@ -23,15 +14,27 @@ resource "openstack_compute_instance_v2" "ansible" {
 
   }
 
-  user_data = data.template_file.user_data.rendered
+  user_data = templatefile("${path.module}/installation.sh",{
+    private_key = var.private_key
+    http_proxy  = var.http_proxy
+    masterips   = var.masterips
+    workerips   = var.workerips
+
+  })
 
 
 
   security_groups = ["k8s_secgroup"]
 }
 
-output "data" {
-  value = data.template_file.user_data
+output "user_data" {
+  value = templatefile("${path.module}/installation.sh",{
+    private_key = "var.private_key"
+    http_proxy  = "var.http_proxy"
+    masterips   = "var.masterips"
+    workerips   = "var.workerips"
+
+  })
 
 }
 
