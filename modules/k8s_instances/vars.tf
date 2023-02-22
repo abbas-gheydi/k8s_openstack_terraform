@@ -9,10 +9,6 @@ variable "worker_vm_count" {
 
 }
 
-variable "admin_pubick_key" {
-  type = string
-
-}
 
 variable "flavers" {
   type = object({
@@ -39,4 +35,8 @@ variable "network" {
 variable "firewall_trusted_ip" {
   type = string
 
+}
+
+variable "ansible_key" {
+  type = string  
 }

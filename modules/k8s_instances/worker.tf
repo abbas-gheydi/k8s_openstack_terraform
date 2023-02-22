@@ -9,7 +9,7 @@ resource "openstack_compute_instance_v2" "k8s-workers" {
     group = openstack_compute_servergroup_v2.worker.id
   }
 
-  key_pair = var.admin_pubick_key
+  key_pair = var.ansible_key
 
 
   network {

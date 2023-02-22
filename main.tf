@@ -14,13 +14,13 @@ module "ansible" {
 }
 module "k8s_instances" {
   source              = "./modules/k8s_instances"
-  admin_pubick_key    = var.admin_pubick_key
   flavers             = var.flavers
   image_id            = var.image_id
   network             = var.network
   master_vm_count     = var.master_vm_count
   worker_vm_count     = var.worker_vm_count
   firewall_trusted_ip = var.firewall_trusted_ip
+  ansible_key = openstack_compute_keypair_v2.ansible.name
 
 }
 

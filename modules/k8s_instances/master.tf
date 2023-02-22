@@ -8,7 +8,7 @@ resource "openstack_compute_instance_v2" "k8s-master" {
   }
 
 
-  key_pair = var.admin_pubick_key
+  key_pair = var.ansible_key
 
   network {
     name = var.network.name
