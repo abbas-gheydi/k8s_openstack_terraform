@@ -2,7 +2,7 @@
 
 ## About The Project:
 
-Provision a production Grade "Kubernetes" cluster with [Terraform](https://www.terraform.io/) on Openstack.
+Provision a Production Grade "Kubernetes" cluster with [Terraform](https://www.terraform.io/) on Openstack.
 
 It deploys one "ansible" vm and install and configure “kubespray” on it
 
