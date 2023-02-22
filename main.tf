@@ -3,7 +3,7 @@ module "ansible" {
   private_key         = tostring(tls_private_key.ansible.private_key_openssh)
   http_proxy          = ""
   admin_public_key    = var.admin_pubick_key
-  network_name        = var.network_name
+  network_name        = var.network.name
   image_id            = var.image_id
   masterips           = module.k8s_instances.master_ips
   workerips           = module.k8s_instances.works_ips

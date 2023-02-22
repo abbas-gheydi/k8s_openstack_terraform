@@ -4,7 +4,7 @@ resource "openstack_compute_instance_v2" "k8s-master" {
   count     = var.master_vm_count
   image_id  = var.image_id
   scheduler_hints {
-    group = openstack_compute_servergroup_v2.worker.id
+    group = openstack_compute_servergroup_v2.master.id
   }
 
 

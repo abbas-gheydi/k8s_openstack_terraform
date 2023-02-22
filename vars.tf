@@ -1,22 +1,17 @@
 variable "tenant_name" {
   type    = string
-  default = "value"
+  
 
 }
 variable "admin_pubick_key" {
   type    = string
-  default = "admin"
-
-}
-variable "network_name" {
-  type    = string
-  default = "value"
+  
 
 }
 
 variable "image_id" {
   type    = string
-  default = "value"
+  
 
 }
 
@@ -26,11 +21,7 @@ variable "flavers" {
     worker  = string
     ansible = string
   })
-  default = {
-    ansible = "tiny-1"
-    master  = "tiny-2"
-    worker  = "tiny-3"
-  }
+
 
 
 }
@@ -38,14 +29,14 @@ variable "flavers" {
 
 variable "master_vm_count" {
   type    = number
-  default = 3
+  
 
 
 }
 
 variable "worker_vm_count" {
   type    = number
-  default = 3
+  
 
 
 }
@@ -53,7 +44,7 @@ variable "worker_vm_count" {
 
 variable "firewall_trusted_ip" {
   type    = string
-  default = "value"
+  
 
 }
 
@@ -63,9 +54,6 @@ variable "network" {
     name        = string
     subnet_cidr = string
   })
-  default = {
-    name        = "value"
-    subnet_cidr = "value"
-  }
+
 
 }
